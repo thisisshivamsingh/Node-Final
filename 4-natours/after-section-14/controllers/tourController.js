@@ -5,7 +5,11 @@ const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 const AppError = require('./../utils/appError');
 
-const multerStorage = multer.memoryStorage();
+const multerStorage = res.status(200).json({
+      status: 'success',
+      data: {
+        data: doc
+      }multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
